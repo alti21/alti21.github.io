@@ -28,15 +28,16 @@ body {
 .header_link{
     color: #FFFAFA;
     text-decoration: none;
+    
+}
+.header_link:hover  hr {
+    width: 8rem;
 }
 hr {
     border: 2px solid royalblue;
     width: 5rem;
     position: absolute;
-
-}
-.header_link:hover  hr {
-    width: 8rem;
+    transition: width 0.5s;
 }
 .main_heading {
     color: #FFFAFA;
