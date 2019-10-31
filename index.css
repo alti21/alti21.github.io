@@ -1,6 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
-    background: #000026;
+    height: 100%;
+    width: 100%
 }
 body {
-    background: blue;
+    background: #FFFAFA;
+    font-family: "Lato", sans-serif;
 }
+.header {
+    height: 100vh;
+    background-image: url("cup.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.header_links {
+    
+    
+    padding-left: 3em;
+    position: relative;
+}
+.header_link{
+    color: #FFFAFA;
+    text-decoration: none;
+}
+hr {
+    border: 2px solid royalblue;
+    width: 5rem;
+    position: absolute;
+
+}
+.header_link:hover  hr {
+    width: 8rem;
+}
+.main_heading {
+    color: #FFFAFA;
+    position: relative;
+    text-align: center;
+}
+.main {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20vw 40vh;
+}
+
+ 
