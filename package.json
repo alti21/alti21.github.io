@@ -1,0 +1,22 @@
+{
+  "name": "alti21.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass index.scss main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alti21/alti21.github.io.git"
+  },
+  "author": "Altemush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alti21/alti21.github.io/issues"
+  },
+  "homepage": "https://github.com/alti21/alti21.github.io#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
