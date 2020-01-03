@@ -1,5 +1,27 @@
+@import "variables";
 
 @mixin style-link {
     color: #FFFAFA;
     text-decoration: none;
+}
+
+@mixin gradient-text {
+    background-image: $blue-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient-text-green {
+    background-image: $green-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin grid-item-setup($col_left, $col_right, $row_top, $row_bottom, $align, $justify) {
+    grid-column: $col_left / $col_right;
+    grid-row: $row_top / $row_bottom;
+    align-self: $align;
+    justify-self: $justify;
 }

@@ -11,11 +11,13 @@ body {
   background: #FFFAFA;
   font-family: 'Titillium Web', sans-serif;
   display: grid;
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto); }
 
+/******************** HEADER ********************/
 .header {
   height: 100vh;
-  background-image: url("cup.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 237, 210, 0.2), rgba(0, 174, 233, 0.2)), url("cup.jpg");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -25,15 +27,141 @@ body {
   align-items: start;
   justify-items: center; }
   .header__main {
-    grid-column: 2 / -1;
+    grid-column: 2 / 5;
     grid-row: 2 / 3;
     color: #FFFAFA;
-    text-align: justify;
+    text-align: left;
     font-size: 2.5vw; }
+
+hr {
+  border: 2px solid royalblue;
+  width: 4rem;
+  position: absolute;
+  transition: width 0.5s; }
+
+/******************** ABOUT ME SECTION ********************/
+.about_me {
+  text-align: center;
+  background-color: gainsboro;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: .3fr .7fr;
+  grid-template-rows: .3fr .7fr;
+  align-items: center;
+  justify-items: center;
+  gap: 15px;
+  padding: 1rem; }
+  .about_me__heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 1.5rem;
+    width: 250px;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    color: whitesmoke;
+    border-radius: 60px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px black; }
+  .about_me__info {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: left;
+    font-size: 170%;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+  .about_me__icon {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3; }
+  .about_me__education {
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: start;
+    align-self: start; }
+    .about_me__education--heading {
+      font-size: 1.5rem;
+      background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+      color: whitesmoke;
+      border-radius: 60px;
+      padding: 15px;
+      box-shadow: 3px 3px 10px black;
+      width: 200px; }
+    .about_me__education > h3 {
+      text-align: left;
+      justify-self: start; }
+    .about_me__education > p {
+      text-align: left;
+      font-size: 130%; }
+
+/******************** MY SKILLS SECTION ********************/
+.my_skills {
+  background-color: gainsboro;
+  text-align: center;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: .3fr .7fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center; }
+  .my_skills__heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 1.5rem;
+    width: 250px;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    color: whitesmoke;
+    border-radius: 60px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px black; }
+  .my_skills__icons {
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2; }
+    .my_skills__icons > figure {
+      display: inline-block;
+      margin: 3%; }
+
+/******************** MY PROJECTS SECTION ********************/
+.my_projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; }
+
+.project-figure {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative; }
+  .project-figure > a {
+    outline: none; }
+  .project-figure__img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s; }
+  .project-figure__caption {
+    font-size: 2rem;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    opacity: 0;
+    transition: all .5s;
+    color: whitesmoke; }
+  .project-figure:hover .project-figure__caption {
+    opacity: 1;
+    transform: translateY(-150%); }
+  .project-figure:hover .project-figure__img {
+    filter: blur(3px) brightness(50%); }
 
 @media only screen and (min-width: 600px) {
   .header {
-    grid-template-columns: 1fr 100px 1fr 1fr; }
+    grid-template-columns: 1fr 100px 1fr 1fr 2%; }
   .navbar__link--1 {
     font-size: 2.5vw; }
   .navbar__link--2 {
@@ -45,7 +173,7 @@ body {
 
 @media only screen and (min-width: 1000px) {
   .header__main {
-    grid-column: 3 / -1; } }
+    grid-column: 3 / 5; } }
 
 .navbar__link--1 {
   color: #FFFAFA;
@@ -126,14 +254,45 @@ body {
   .navbar__link--4 {
     align-self: center; } }
 
-hr {
-  border: 2px solid royalblue;
-  width: 4rem;
-  position: absolute;
-  transition: width 0.5s; }
+@media only screen and (max-width: 800px) {
+  .about_me {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; }
+    .about_me__info {
+      grid-column: 1 / 2; } }
 
-.main {
-  width: 100%;
-  height: auto;
-  text-align: center;
-  padding: 20vw 40vh; }
+@media only screen and (max-width: 800px) {
+  .about_me {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto; }
+    .about_me__heading {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      align-self: start;
+      justify-self: start;
+      font-size: 1rem;
+      width: 200px; }
+    .about_me__info {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      align-self: center;
+      justify-self: center; }
+    .about_me__icon {
+      grid-row: 3 / 4; }
+    .about_me__education {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5; }
+      .about_me__education--heading {
+        font-size: 1rem;
+        width: 110px; } }
+
+@media only screen and (max-width: 650px) {
+  .my_skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .my_skills__heading {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; }
+    .my_skills__icons {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3; } }

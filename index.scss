@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 
+
 * {
     margin: 0;
     padding: 0;
@@ -17,11 +18,13 @@ body {
     font-family: 'Titillium Web', sans-serif;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
 }
 
+/******************** HEADER ********************/
 .header {
     height: 100vh;
-    background-image: url("cup.jpg");
+    background-image: $light-blue-gradient, url("cup.jpg");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -33,133 +36,11 @@ body {
     justify-items: center;
 
     &__main {
-        grid-column: 2 / -1;
+        grid-column: 2 / 5;
         grid-row: 2 / 3;
         color: #FFFAFA;
-        text-align: justify;
+        text-align: left;
         font-size: $medium-font-size-vw;
-    }
-}
-
-
-
-@media only screen and (min-width: 600px) {
-    .header {
-        grid-template-columns: 1fr 100px 1fr 1fr;
-    }
-    .navbar__link {
-        &--1 {
-            font-size: $medium-font-size-vw;
-        }
-        &--2 {
-            font-size: $medium-font-size-vw;
-        }
-        &--3 {
-            font-size: $medium-font-size-vw;
-        }
-        &--4 {
-            font-size: $medium-font-size-vw;
-        }
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .header__main {
-        grid-column: 3 / -1;
-    }
-}
-
-.navbar__link{
-    &--1 {
-        @include style-link;
-        justify-self: end;
-        grid-row: 4 / -1;
-        grid-column: 1 / 2;
-    }
-    &--1:hover hr{
-        width: $hover-width;
-    }
-    &--2 {
-        @include style-link;
-        justify-self: start;
-        align-self: start;
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
-    }
-    &--2:hover hr{
-        width: $hover-width;
-    }
-    &--3 {
-        @include style-link;
-        grid-column: 3 / 4;
-        grid-row: 3 / 4;
-        justify-self: end;
-    }
-    &--3:hover hr{
-        width: $hover-width;
-    }
-    &--4 {
-        @include style-link;
-        justify-self: start;
-        grid-row: 4 / -1;
-        grid-column: 4 / 5;
-    }
-    &--4:hover hr{
-        width: $hover-width;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .header__main {
-        font-size: $small-font-size;
-    }
-    .navbar__link {
-        &--1 {
-            font-size: $small-font-size;
-            grid-column: 2 / 3;
-            grid-row: 4 / 5;
-            align-self: center;
-            justify-self: start;
-        }
-        &--2 {
-            font-size: $small-font-size;
-            grid-column: 2 / 3;
-            grid-row: 4 / 5;
-            align-self: start;
-            justify-self: center;
-        }
-        &--3 {
-            font-size: $small-font-size;
-            grid-column: 3 / 4;
-            grid-row: 4 / 5;
-            align-self: start;
-            justify-self: start;
-        }
-        &--4 {
-            font-size: $small-font-size;
-            grid-column: 3 / 4;
-            grid-row: 4 / 5;
-            align-self: center;
-            justify-self: center;
-        }
-    }
-}
-
-@media only screen and (min-width: 1100px) {
-    .navbar__link {
-        &--1 {
-            align-self: center;
-        }
-        &--2 {
-            align-self: end;
-        }
-        &--3 {
-            align-self: end;
-        }
-        &--4 {
-            align-self: center;
-        }
-    
     }
 }
 
@@ -170,11 +51,156 @@ hr {
     transition: width 0.5s;
 }
 
-.main {
-    width: 100%;
-    height: auto;
+
+
+/******************** ABOUT ME SECTION ********************/
+.about_me {
+   
+    
     text-align: center;
-    padding: 20vw 40vh;
+    background-color: gainsboro;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: .3fr .7fr;
+    grid-template-rows: .3fr .7fr;
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+    padding: 1rem;
+    
+    &__heading {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        font-size: 1.5rem;
+        width: 250px;
+        background-image: $blue-gradient;
+        color: whitesmoke;
+        border-radius: 60px;
+        padding: 15px;
+        box-shadow: 3px 3px 10px black;
+
+    }
+
+    &__info {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        text-align: left;
+        font-size: 170%;
+        @include gradient-text;
+    }
+
+    &__icon {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    &__education {
+        @include gradient-text;
+
+        &--heading {
+            font-size: 1.5rem;
+            background-image: $blue-gradient;
+            color: whitesmoke;
+            border-radius: 60px;
+            padding: 15px;
+            box-shadow: 3px 3px 10px black;
+            width: 200px;
+        }
+
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: start;
+        align-self: start;
+
+        & > h3 {
+            text-align: left;
+            justify-self: start;
+        }
+
+        & > p {
+            text-align: left;
+            font-size: 130%;
+        }
+    }
 }
 
- 
+
+
+
+/******************** MY SKILLS SECTION ********************/
+.my_skills {
+    background-color: gainsboro;
+    text-align: center;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: .3fr .7fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    &__heading {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        font-size: 1.5rem;
+        width: 250px;
+        background-image: $blue-gradient;
+        color: whitesmoke;
+        border-radius: 60px;
+        padding: 15px;
+        box-shadow: 3px 3px 10px black;
+    }
+
+    &__icons {
+        @include gradient-text;
+        width: 100%;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        & > figure {
+            display: inline-block;
+            margin: 3%;
+        }
+    }
+}
+
+
+
+
+/******************** MY PROJECTS SECTION ********************/
+.my_projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+}
+
+.project-figure {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+    & > a {
+        outline: none;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        transition: all .5s;
+    }
+    &__caption {
+        font-size: 2rem;
+        position: absolute;
+        top: 70%;
+        left: 30%;
+        opacity: 0;
+        transition: all .5s;
+         color: whitesmoke;
+    }
+    &:hover &__caption {
+        opacity: 1;
+        transform: translateY(-150%);
+    }
+    &:hover &__img {
+        filter: blur(3px) brightness(50%);
+    }
+}
+
+
+@import "media_queries";

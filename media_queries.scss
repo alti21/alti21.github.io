@@ -1,0 +1,177 @@
+@media only screen and (min-width: 600px) {
+    .header {
+        grid-template-columns: 1fr 100px 1fr 1fr 2%;
+    }
+    .navbar__link {
+        &--1 {
+            font-size: $medium-font-size-vw;
+        }
+        &--2 {
+            font-size: $medium-font-size-vw;
+        }
+        &--3 {
+            font-size: $medium-font-size-vw;
+        }
+        &--4 {
+            font-size: $medium-font-size-vw;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .header__main {
+        grid-column: 3 / 5;
+    }
+}
+
+.navbar__link{
+    &--1 {
+        @include style-link;
+        justify-self: end;
+        grid-row: 4 / -1;
+        grid-column: 1 / 2;
+    }
+    &--1:hover hr{
+        width: $hover-width;
+    }
+    &--2 {
+        @include style-link;
+        justify-self: start;
+        align-self: start;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    &--2:hover hr{
+        width: $hover-width;
+    }
+    &--3 {
+        @include style-link;
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+        justify-self: end;
+    }
+    &--3:hover hr{
+        width: $hover-width;
+    }
+    &--4 {
+        @include style-link;
+        justify-self: start;
+        grid-row: 4 / -1;
+        grid-column: 4 / 5;
+    }
+    &--4:hover hr{
+        width: $hover-width;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header__main {
+        font-size: $small-font-size;
+    }
+    .navbar__link {
+        &--1 {
+            font-size: $small-font-size;
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+            align-self: center;
+            justify-self: start;
+        }
+        &--2 {
+            font-size: $small-font-size;
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+            align-self: start;
+            justify-self: center;
+        }
+        &--3 {
+            font-size: $small-font-size;
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+            align-self: start;
+            justify-self: start;
+        }
+        &--4 {
+            font-size: $small-font-size;
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .navbar__link {
+        &--1 {
+            align-self: center;
+        }
+        &--2 {
+            align-self: end;
+        }
+        &--3 {
+            align-self: end;
+        }
+        &--4 {
+            align-self: center;
+        }
+    
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .about_me {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        &__info {
+            grid-column: 1 / 2;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .about_me {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        &__heading {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            align-self: start;
+            justify-self: start;
+            font-size: 1rem;
+            width: 200px;
+        }
+        &__info {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            align-self: center;
+            justify-self: center;
+        }
+        &__icon {
+            grid-row: 3 / 4;
+        }
+        &__education {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+
+            &--heading {
+                font-size: 1rem;
+                width: 110px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .my_skills {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        &__heading {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        &__icons {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+    }
+}
