@@ -5,7 +5,8 @@
 
 html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
 
 body {
   background: #FFFAFA;
@@ -130,15 +131,28 @@ hr {
       margin: 3%; }
 
 /******************** MY PROJECTS SECTION ********************/
+.projects {
+  background-color: gainsboro; }
+
 .my_projects {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr; }
+  grid-template-rows: auto auto; }
+  .my_projects__heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 1.5rem;
+    width: 185px;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    color: whitesmoke;
+    border-radius: 60px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px black;
+    margin: 1.5rem; }
 
 .project-figure {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  position: relative; }
+  grid-column: 3 / 4;
+  grid-row: 2 / 3; }
   .project-figure > a {
     outline: none; }
   .project-figure__img {
@@ -146,10 +160,10 @@ hr {
     height: 100%;
     transition: all .5s; }
   .project-figure__caption {
-    font-size: 2rem;
-    position: absolute;
-    top: 70%;
-    left: 30%;
+    font-size: 3vw;
+    position: relative;
+    bottom: 40%;
+    left: 35%;
     opacity: 0;
     transition: all .5s;
     color: whitesmoke; }
@@ -158,6 +172,52 @@ hr {
     transform: translateY(-150%); }
   .project-figure:hover .project-figure__img {
     filter: blur(3px) brightness(50%); }
+  .project-figure:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2; }
+  .project-figure:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2; }
+  .project-figure:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3; }
+  .project-figure:nth-child(5) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3; }
+  .project-figure:nth-child(6) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; }
+
+/******************** MY PROJECTS SECTION ********************/
+.my_contact {
+  background-color: gainsboro; }
+  .my_contact__heading {
+    font-size: 1.5rem;
+    width: 185px;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    color: whitesmoke;
+    border-radius: 60px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px black;
+    margin: 1.5rem; }
+  .my_contact > p {
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+
+.icon_references {
+  background-color: gainsboro; }
+  .icon_references > div {
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding-left: 1.5rem; }
+    .icon_references > div:nth-child(6) {
+      padding-bottom: 1.5rem; }
 
 @media only screen and (min-width: 600px) {
   .header {
@@ -296,3 +356,53 @@ hr {
     .my_skills__icons {
       grid-column: 1 / 2;
       grid-row: 2 / 3; } }
+
+@media only screen and (max-width: 750px) {
+  .my_projects {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; }
+  .project-figure {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4; }
+    .project-figure__caption {
+      font-size: 1.5rem; }
+    .project-figure:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3; }
+    .project-figure:nth-child(3) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4; }
+    .project-figure:nth-child(4) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2; }
+    .project-figure:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3; }
+    .project-figure:nth-child(6) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; } }
+
+@media only screen and (max-width: 450px) {
+  .my_projects {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; }
+  .project-figure {
+    grid-column: 1 / 2;
+    grid-row: 6 / 7; }
+    .project-figure__caption {
+      font-size: 1.5rem; }
+    .project-figure:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3; }
+    .project-figure:nth-child(3) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4; }
+    .project-figure:nth-child(4) {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5; }
+    .project-figure:nth-child(5) {
+      grid-column: 1 / 2;
+      grid-row: 5 / 6; }
+    .project-figure:nth-child(6) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; } }

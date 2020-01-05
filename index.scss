@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixins";
 
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,8 @@
 
 html {
     height: 100%;
-    width: 100%
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, .5fr) .25fr 1fr;
@@ -55,8 +54,6 @@ hr {
 
 /******************** ABOUT ME SECTION ********************/
 .about_me {
-   
-    
     text-align: center;
     background-color: gainsboro;
     background-size: cover;
@@ -78,7 +75,6 @@ hr {
         border-radius: 60px;
         padding: 15px;
         box-shadow: 3px 3px 10px black;
-
     }
 
     &__info {
@@ -96,7 +92,6 @@ hr {
 
     &__education {
         @include gradient-text;
-
         &--heading {
             font-size: 1.5rem;
             background-image: $blue-gradient;
@@ -165,17 +160,29 @@ hr {
 
 
 /******************** MY PROJECTS SECTION ********************/
+.projects {
+    background-color: gainsboro;
+}
 .my_projects {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    
+    grid-template-rows: auto auto;
+    &__heading {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        font-size: 1.5rem;
+        width: 185px;
+        background-image: $blue-gradient;
+        color: whitesmoke;
+        border-radius: 60px;
+        padding: 15px;
+        box-shadow: 3px 3px 10px black;
+        margin: 1.5rem;
+    }
 }
-
 .project-figure {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    position: relative;
+
     & > a {
         outline: none;
     }
@@ -185,13 +192,15 @@ hr {
         transition: all .5s;
     }
     &__caption {
-        font-size: 2rem;
-        position: absolute;
-        top: 70%;
-        left: 30%;
+        font-size: 3vw;
+        position: relative;
+        //top: 70%;
+        //left: 30%;
+        bottom: 40%;
+        left: 35%;
         opacity: 0;
         transition: all .5s;
-         color: whitesmoke;
+        color: whitesmoke;
     }
     &:hover &__caption {
         opacity: 1;
@@ -200,7 +209,69 @@ hr {
     &:hover &__img {
         filter: blur(3px) brightness(50%);
     }
+    &:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    &:nth-child(3) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    &:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    &:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    &:nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
 }
 
+
+
+
+
+
+
+/******************** MY PROJECTS SECTION ********************/
+.my_contact {
+
+    background-color: gainsboro;
+    &__heading {
+        font-size: 1.5rem;
+        width: 185px;
+        background-image: $blue-gradient;
+        color: whitesmoke;
+        border-radius: 60px;
+        padding: 15px;
+        box-shadow: 3px 3px 10px black;
+        margin: 1.5rem;
+    }
+    & > p {
+        padding-left: 1.5rem;
+        padding-bottom: 1.5rem;
+        @include gradient-text;
+    }
+}
+
+
+.icon_references {
+    background-color: gainsboro;
+    & > div {
+        @include gradient-text;
+        padding-left: 1.5rem;
+        &:nth-child(6){
+            padding-bottom: 1.5rem;
+        }
+        
+    }
+    
+}
 
 @import "media_queries";
