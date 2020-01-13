@@ -9,6 +9,8 @@
     background-image: $blue-gradient;
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
 }
 
@@ -16,6 +18,8 @@
     background-image: $green-gradient;
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
 }
 

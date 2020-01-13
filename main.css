@@ -70,6 +70,8 @@ hr {
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent; }
   .about_me__icon {
     grid-column: 1 / 2;
@@ -78,6 +80,8 @@ hr {
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -97,6 +101,12 @@ hr {
     .about_me__education > p {
       text-align: left;
       font-size: 130%; }
+
+#aboutMe {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: start;
+  color: transparent; }
 
 /******************** MY SKILLS SECTION ********************/
 .my_skills {
@@ -122,6 +132,8 @@ hr {
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
     width: 100%;
     grid-column: 2 / 3;
@@ -135,9 +147,10 @@ hr {
   background-color: gainsboro; }
 
 .my_projects {
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto; }
+  grid-template-rows: 1fr 1fr; }
   .my_projects__heading {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -151,42 +164,83 @@ hr {
     margin: 1.5rem; }
 
 .project-figure {
+  transition: all .5s;
+  background-image: url("logo.png");
+  background-position: center;
+  background-size: cover;
   grid-column: 3 / 4;
   grid-row: 2 / 3; }
   .project-figure > a {
-    outline: none; }
+    outline: none;
+    text-decoration: none; }
   .project-figure__img {
-    width: 100%;
-    height: 100%;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
     transition: all .5s; }
   .project-figure__caption {
+    transition: all .5s;
+    width: 50%;
     font-size: 3vw;
     position: relative;
     bottom: 40%;
     left: 35%;
     opacity: 0;
-    transition: all .5s;
     color: whitesmoke; }
   .project-figure:hover .project-figure__caption {
+    color: black;
     opacity: 1;
-    transform: translateY(-150%); }
-  .project-figure:hover .project-figure__img {
-    filter: blur(3px) brightness(50%); }
+    transform: translateY(-100%); }
+  .project-figure:hover {
+    filter: brightness(70%); }
   .project-figure:nth-child(2) {
     grid-column: 2 / 3;
-    grid-row: 1 / 2; }
+    grid-row: 1 / 2;
+    background-image: url("hero-small.jpg");
+    background-position: center;
+    background-size: cover; }
+    .project-figure:nth-child(2) > a > div {
+      height: 100%;
+      width: 100%; }
   .project-figure:nth-child(3) {
     grid-column: 3 / 4;
-    grid-row: 1 / 2; }
+    grid-row: 1 / 2;
+    background-image: url("budgety.png");
+    background-position: center;
+    background-size: cover; }
+    .project-figure:nth-child(3) > a > div {
+      height: 100%;
+      width: 100%; }
   .project-figure:nth-child(4) {
     grid-column: 1 / 2;
-    grid-row: 2 / 3; }
+    grid-row: 2 / 3;
+    background-image: url("food.jpg");
+    background-position: center;
+    background-size: cover; }
+    .project-figure:nth-child(4) > a > div {
+      height: 100%;
+      width: 100%; }
   .project-figure:nth-child(5) {
     grid-column: 2 / 3;
-    grid-row: 2 / 3; }
+    grid-row: 2 / 3;
+    background-image: url("hand.png");
+    background-position: center;
+    background-size: cover; }
+    .project-figure:nth-child(5) > a > div {
+      height: 100%;
+      width: 100%; }
   .project-figure:nth-child(6) {
     grid-column: 1 / 2;
-    grid-row: 1 / 2; }
+    grid-row: 1 / 2;
+    background-image: url("back2.jpg");
+    background-position: center;
+    background-size: cover; }
+    .project-figure:nth-child(6) > a > div {
+      height: 100%;
+      width: 100%; }
+  .project-figure > a > div {
+    height: 100%;
+    width: 100%; }
 
 /******************** MY PROJECTS SECTION ********************/
 .my_contact {
@@ -199,14 +253,19 @@ hr {
     border-radius: 60px;
     padding: 15px;
     box-shadow: 3px 3px 10px black;
-    margin: 1.5rem; }
+    margin: 1.5rem;
+    display: inline-block; }
   .my_contact > p {
     padding-left: 1.5rem;
     padding-bottom: 1.5rem;
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent; }
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    display: inline;
+    font-size: 2em; }
 
 .icon_references {
   background-color: gainsboro; }
@@ -214,6 +273,8 @@ hr {
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     background-clip: text;
     -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
     padding-left: 1.5rem; }
     .icon_references > div:nth-child(6) {
@@ -357,10 +418,15 @@ hr {
       grid-column: 1 / 2;
       grid-row: 2 / 3; } }
 
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+  .my_projects {
+    height: 70vh; } }
+
 @media only screen and (max-width: 750px) {
   .my_projects {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; }
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 120vh; }
   .project-figure {
     grid-column: 2 / 3;
     grid-row: 3 / 4; }
@@ -385,7 +451,8 @@ hr {
 @media only screen and (max-width: 450px) {
   .my_projects {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; }
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 300vh; }
   .project-figure {
     grid-column: 1 / 2;
     grid-row: 6 / 7; }
