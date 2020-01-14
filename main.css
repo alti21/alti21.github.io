@@ -93,14 +93,19 @@ hr {
       color: whitesmoke;
       border-radius: 60px;
       padding: 15px;
-      box-shadow: 3px 3px 10px black;
-      width: 200px; }
+      box-shadow: 3px 3px 10px black; }
     .about_me__education > h3 {
       text-align: left;
       justify-self: start; }
     .about_me__education > p {
       text-align: left;
-      font-size: 130%; }
+      font-size: 130%;
+      background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -ms-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent; }
 
 #aboutMe {
   grid-column: 1 / 2;
@@ -122,7 +127,6 @@ hr {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     font-size: 1.5rem;
-    width: 250px;
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
     color: whitesmoke;
     border-radius: 60px;
@@ -164,10 +168,13 @@ hr {
     margin: 1.5rem; }
 
 .project-figure {
-  transition: all .5s;
   background-image: url("logo.png");
   background-position: center;
   background-size: cover;
+  transition: background-image .5s ease-in;
+  -webkit-transition: background-image .5s ease-in;
+  -moz-transition: background-image .5s ease-in;
+  -o-transition: background-image .5s ease-in;
   grid-column: 3 / 4;
   grid-row: 2 / 3; }
   .project-figure > a {
@@ -179,18 +186,16 @@ hr {
     height: 300px;
     transition: all .5s; }
   .project-figure__caption {
+    text-align: center;
     transition: all .5s;
     width: 50%;
     font-size: 3vw;
-    position: relative;
-    bottom: 40%;
-    left: 35%;
     opacity: 0;
     color: whitesmoke; }
   .project-figure:hover .project-figure__caption {
     color: black;
     opacity: 1;
-    transform: translateY(-100%); }
+    transform: translateY(-50%); }
   .project-figure:hover {
     filter: brightness(70%); }
   .project-figure:nth-child(2) {
@@ -199,48 +204,39 @@ hr {
     background-image: url("hero-small.jpg");
     background-position: center;
     background-size: cover; }
-    .project-figure:nth-child(2) > a > div {
-      height: 100%;
-      width: 100%; }
   .project-figure:nth-child(3) {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     background-image: url("budgety.png");
     background-position: center;
     background-size: cover; }
-    .project-figure:nth-child(3) > a > div {
-      height: 100%;
-      width: 100%; }
   .project-figure:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background-image: url("food.jpg");
     background-position: center;
     background-size: cover; }
-    .project-figure:nth-child(4) > a > div {
-      height: 100%;
-      width: 100%; }
   .project-figure:nth-child(5) {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     background-image: url("hand.png");
     background-position: center;
     background-size: cover; }
-    .project-figure:nth-child(5) > a > div {
-      height: 100%;
-      width: 100%; }
   .project-figure:nth-child(6) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     background-image: url("back2.jpg");
     background-position: center;
     background-size: cover; }
-    .project-figure:nth-child(6) > a > div {
-      height: 100%;
-      width: 100%; }
+  .project-figure:hover {
+    background-image: linear-gradient(to bottom, #00edd2, #0065e9); }
   .project-figure > a > div {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
 
 /******************** MY PROJECTS SECTION ********************/
 .my_contact {
@@ -391,8 +387,7 @@ hr {
       grid-row: 1 / 2;
       align-self: start;
       justify-self: start;
-      font-size: 1rem;
-      width: 200px; }
+      font-size: 1rem; }
     .about_me__info {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
@@ -404,8 +399,7 @@ hr {
       grid-column: 1 / 2;
       grid-row: 4 / 5; }
       .about_me__education--heading {
-        font-size: 1rem;
-        width: 110px; } }
+        font-size: 1rem; } }
 
 @media only screen and (max-width: 650px) {
   .my_skills {
