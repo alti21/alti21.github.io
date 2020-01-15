@@ -99,7 +99,6 @@ hr {
             border-radius: 60px;
             padding: 15px;
             box-shadow: 3px 3px 10px black;
-         //   width: 200px;
         }
 
         grid-column: 2 / 3;
@@ -158,10 +157,18 @@ hr {
         & > figure {
             display: inline-block;
             margin: 3%;
+            & > figcaption {
+                @include gradient-text;
+            }
         }
     }
 }
-
+#mySkills {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: start;
+    color: transparent;
+}
 
 
 
@@ -283,23 +290,12 @@ hr {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
 }
-// .caption {
-//     transition: all .5s;
-//     width: 50%;
-//     font-size: 3vw;
-//     position: relative;
-//     //top: 70%;
-//     //left: 30%;
-//     bottom: 40%;
-//     left: 35%;
-//     opacity: 0;
-//     color: whitesmoke;
-// }
-// .project-figure:hover .caption {
-//     color: white;
-//     opacity: 1;
-//     transform: translateY(-100%);
-// }
+#myProjects {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: start;
+    color: transparent;
+}
 
 
 /******************** MY PROJECTS SECTION ********************/
@@ -316,13 +312,19 @@ hr {
         margin: 1.5rem;
         display: inline-block;
     }
-    & > p {
+    & > p, & > a {
         padding-left: 1.5rem;
         padding-bottom: 1.5rem;
         @include gradient-text;
         display: inline;
         font-size: 2em;
+        transition: all .5s;
+        display: inline-block;
     }
+    & > a:hover {
+        font-size: 4rem;
+    }
+    
 }
 
 .icon_references {

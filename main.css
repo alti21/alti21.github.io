@@ -145,6 +145,19 @@ hr {
     .my_skills__icons > figure {
       display: inline-block;
       margin: 3%; }
+      .my_skills__icons > figure > figcaption {
+        background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -ms-background-clip: text;
+        -moz-background-clip: text;
+        color: transparent; }
+
+#mySkills {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: start;
+  color: transparent; }
 
 /******************** MY PROJECTS SECTION ********************/
 .projects {
@@ -238,6 +251,12 @@ hr {
     align-items: center;
     justify-content: center; }
 
+#myProjects {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: start;
+  color: transparent; }
+
 /******************** MY PROJECTS SECTION ********************/
 .my_contact {
   background-color: gainsboro; }
@@ -251,7 +270,7 @@ hr {
     box-shadow: 3px 3px 10px black;
     margin: 1.5rem;
     display: inline-block; }
-  .my_contact > p {
+  .my_contact > p, .my_contact > a {
     padding-left: 1.5rem;
     padding-bottom: 1.5rem;
     background-image: linear-gradient(to bottom, #00edd2, #0065e9);
@@ -261,7 +280,11 @@ hr {
     -moz-background-clip: text;
     color: transparent;
     display: inline;
-    font-size: 2em; }
+    font-size: 2em;
+    transition: all .5s;
+    display: inline-block; }
+  .my_contact > a:hover {
+    font-size: 4rem; }
 
 .icon_references {
   background-color: gainsboro; }
