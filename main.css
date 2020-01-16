@@ -40,6 +40,25 @@ hr {
   position: absolute;
   transition: width 0.5s; }
 
+#navbar {
+  overflow: hidden;
+  z-index: 1; }
+  #navbar > a {
+    padding: 10px;
+    margin: 10px; }
+
+.hidden {
+  display: none; }
+
+.appear {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  background-image: linear-gradient(to bottom, #00edd2, #0065e9);
+  border-radius: 50px;
+  margin: 10px 1rem; }
+
 /******************** ABOUT ME SECTION ********************/
 .about_me {
   text-align: center;
