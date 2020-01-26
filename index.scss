@@ -65,10 +65,10 @@ hr {
     display: inline-block;
     position: fixed;
     top: 0;
-    width: 50%;
+    width: 100%;
     background-image: $blue-gradient;
-    border-radius: 50px;
-    margin: 10px 1rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
   
 

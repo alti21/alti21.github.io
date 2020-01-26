@@ -54,10 +54,10 @@ hr {
   display: inline-block;
   position: fixed;
   top: 0;
-  width: 50%;
+  width: 100%;
   background-image: linear-gradient(to bottom, #00edd2, #0065e9);
-  border-radius: 50px;
-  margin: 10px 1rem; }
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; }
 
 /******************** ABOUT ME SECTION ********************/
 .about_me {
