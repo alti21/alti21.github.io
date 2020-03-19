@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background: #FFFAFA;
+    background: #eee;
     font-family: 'Titillium Web', sans-serif;
     display: grid;
     grid-template-columns: 1fr;
@@ -75,7 +75,7 @@ hr {
 /******************** ABOUT ME SECTION ********************/
 .about_me {
     text-align: center;
-    background-color: gainsboro;
+    
     background-size: cover;
     display: grid;
     grid-template-columns: .3fr .7fr;
@@ -149,7 +149,6 @@ hr {
 
 /******************** MY SKILLS SECTION ********************/
 .my_skills {
-    background-color: gainsboro;
     text-align: center;
     padding: 1rem;
     display: grid;
@@ -193,17 +192,18 @@ hr {
 
 
 /******************** MY PROJECTS SECTION ********************/
-.projects {
-    background-color: gainsboro;
-}
 .my_projects {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-areas: "one two three"
+                         "four five six"
+                         "seven eight nine";
     &__heading {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
+      //  grid-column: 1 / 2;
+       // grid-row: 1 / 2;
+     //  grid-area: 1;
         font-size: 1.5rem;
         width: 185px;
         background-image: $blue-gradient;
@@ -221,19 +221,15 @@ hr {
     }
     &__img {
         object-fit: cover;
-         width: 200px;
-        height: 300px;
+        width: 100%;
+  height: 90%;
         transition: all .5s;
     }
     &__caption {
         text-align: center;
         transition: all .5s;
-        width: 50%;
+        width: 75%;
         font-size: 3vw;
-      //  position: absolute;
-    //    bottom: 30%;
-     //   left: 30%;
-     //   right: 30%;
         opacity: 0;
         color: whitesmoke;
     }
@@ -247,49 +243,36 @@ hr {
         
     }
     &:nth-child(2) {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        background-image: url('hero-small.jpg');
+        grid-area: one;
+        background-image: url('imgs/budget.png');
         background-position: center;
         background-size: cover;
     }
     &:nth-child(3) {
-        grid-column: 3 / 4;
-        grid-row: 1 / 2;
-        background-image: url('budgety.png');
+        grid-area: two;
+        background-image: url('imgs/food.png');
         background-position: center;
         background-size: cover;
     }
     &:nth-child(4) {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        background-image: url('food.jpg');
+        grid-area: three;
+        background: url('imgs/candy-small.png');
         background-position: center;
         background-size: cover;
     }
     &:nth-child(5) {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-        background-image: url('hand.png');
+        grid-area: four;
+        background-image: url('imgs/score.png');
         background-position: center;
         background-size: cover;
-        // & > a > div {
-        //     height: 100%;
-        //     width: 100%;
-        //     display: flex;
-        //     flex-direction: column;
-        //     align-items: center;
-        //     justify-content: end;
-        // }
     }
     &:nth-child(6) {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        background-image: url('back2.jpg');
+        grid-area: five;
+        background-image: url('imgs/weather.png');
         background-position: center;
         background-size: cover;
     }
-    background-image: url('logo.png');
+    background-image: url('imgs/natours.png');
     background-position: center;
     background-size: cover;
     &:hover {
@@ -307,20 +290,15 @@ hr {
         align-items: center;
         justify-content: center;
     }
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
+    grid-area: six;
 }
 #myProjects {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     align-self: start;
     color: transparent;
 }
 
-
 /******************** MY PROJECTS SECTION ********************/
 .my_contact {
-    background-color: gainsboro;
     &__heading {
         font-size: 1.5rem;
         width: 185px;
@@ -344,11 +322,9 @@ hr {
     & > a:hover {
         font-size: 4rem;
     }
-    
 }
 
 .icon_references {
-    background-color: gainsboro;
     & > div {
         @include gradient-text;
         padding-left: 1.5rem;
