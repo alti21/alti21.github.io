@@ -291,6 +291,9 @@ hr {
 .my_contact > a:hover {
   font-size: 4rem; }
 
+#references {
+  text-decoration: underline; }
+
 .icon_references > div {
   background-image: linear-gradient(to bottom, #00edd2, #0065e9);
   background-clip: text;

@@ -324,6 +324,11 @@ hr {
     }
 }
 
+
+
+#references {
+    text-decoration: underline;
+}
 .icon_references {
     & > div {
         @include gradient-text;
