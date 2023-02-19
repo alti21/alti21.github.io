@@ -182,7 +182,9 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "one two three" "four five six" "seven eight nine"; }
+  grid-template-areas: "one two three"
+ "four five six"
+ "seven eight nine"; }
   .my_projects__heading {
     font-size: 1.5rem;
     width: 185px;
@@ -262,7 +264,7 @@ hr {
   align-self: start;
   color: transparent; }
 
-/******************** MY PROJECTS SECTION ********************/
+/******************** MY CONTACT SECTION ********************/
 .my_contact__heading {
   font-size: 1.5rem;
   width: 185px;
