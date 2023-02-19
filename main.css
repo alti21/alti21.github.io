@@ -221,8 +221,7 @@ hr {
     color: whitesmoke; }
   .project-figure:hover .project-figure__caption {
     color: black;
-    opacity: 1;
-    transform: translateY(-50%); }
+    opacity: 1; }
   .project-figure:hover {
     filter: brightness(70%); }
   .project-figure:nth-child(2) {
